@@ -1,0 +1,26 @@
+form {
+  width: 40%;
+  margin: 7% auto;
+  border: 1px solid grey;
+  padding: 3%;
+  border-radius: 7px;
+}
+button {
+  width: 100%;
+  margin-top: 7%;
+}
+legend {
+  text-align: center;
+  margin-bottom: 7%;
+  font-size: 2rem;
+  font-weight: bold;
+}
+input:read-only {
+  background-color: #222831;
+}
+.form-control.ng-touched.ng-valid{
+    border: solid 1px green;
+}
+.form-control.ng-touched.ng-invalid{
+    border: solid 1px red;
+}

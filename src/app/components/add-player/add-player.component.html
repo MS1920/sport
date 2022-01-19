@@ -1,0 +1,30 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<form #addPlayerForm="ngForm" (ngSubmit)="addOrEditPlayer()">
+    <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="player.name" [ngModelOptions]="{standalone: true}" id="exampleInputName" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputNumber">Number</label>
+        <input type="number" class="form-control" [(ngModel)]="player.number" [ngModelOptions]="{standalone: true}" id="exampleInputNumber" aria-describedby="emailHelp">
+      </div>
+    <div class="form-group">
+      <label for="exampleInputPost">Post</label>
+      <input type="text" class="form-control" [(ngModel)]="player.poste" [ngModelOptions]="{standalone: true}" id="exampleInputPost" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputAge">Age</label>
+      <input type="number" class="form-control" [(ngModel)]="player.age" [ngModelOptions]="{standalone: true}" id="exampleInputAge">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputNote">Note</label>
+      <input type="text" class="form-control" [(ngModel)]="player.note" [ngModelOptions]="{standalone: true}" id="exampleInputNote">
+    </div>
+    <div class="form-group mt-4" style="text-align: center;">
+      <label style="cursor:pointer;" for="exampleInputAvatar"><i class="fas fa-images"></i> Avatar<input type="file" style="display: none;" class="form-control" (change)='onImageSelected($event)' id="exampleInputAvatar"></label>
+    </div>
+    <div class="d-flex justify-content-center">
+      <img [src]="imagePreview" width="200px" height="250px" *ngIf="imagePreview">
+    </div>
+    <button type="submit" class="btn btn-primary">{{bannerDetails.title}}</button>
+</form>

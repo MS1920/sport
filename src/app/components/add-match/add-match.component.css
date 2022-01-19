@@ -1,0 +1,25 @@
+form {
+  width: 90%;
+  border: 1px solid grey;
+  padding: 2%;
+  border-radius: 7px;
+  margin: 7% auto;
+}
+.form {
+  display: flex;
+  align-items: center;
+}
+.form-group {
+  margin: 0 7px;
+}
+button {
+  width: 17%;
+  height: 43px;
+  margin-top: 35px;
+  margin-left: 5px;
+}
+.form-select {
+    background-color: #222831;
+    border-color: grey;
+    color: white;
+}

@@ -1,0 +1,24 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<div class="container">
+    <form #addArticleForm="ngForm" (ngSubmit)="addOrEditArticle()">
+        <div class="form-group">
+            <label for="exampleInputName">Title</label>
+            <input type="text" class="form-control" [(ngModel)]="article.title" [ngModelOptions]="{standalone: true}" id="exampleInputName" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNumber">Date</label>
+            <input type="date" class="form-control" [(ngModel)]="article.date" [ngModelOptions]="{standalone: true}" id="exampleInputNumber" aria-describedby="emailHelp">
+          </div>
+        <div class="form-group">
+          <label for="exampleInputPost">Description</label>
+          <textarea type="text" class="form-control" rows="3" [(ngModel)]="article.description" [ngModelOptions]="{standalone: true}" id="exampleInputPost" aria-describedby="emailHelp"></textarea>
+        </div>
+        <div class="form-group mt-4" style="text-align: center;">
+          <label style="cursor:pointer;" for="exampleInputAvatar"><i class="fas fa-images"></i> Article Image<input type="file" style="display: none;" class="form-control" (change)='onImageSelected($event)' id="exampleInputAvatar"></label>
+        </div>
+        <div class="d-flex justify-content-center">
+          <img [src]="imagePreview" width="200px" height="250px" *ngIf="imagePreview">
+        </div>
+        <button type="submit" class="btn btn-primary">{{bannerDetails.title}}</button>
+    </form>
+</div>

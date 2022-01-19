@@ -1,0 +1,33 @@
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <!-- <th scope="col">#</th> -->
+      <th scope="col">Player Name</th>
+      <th scope="col">Number</th>
+      <th scope="col">Position</th>
+      <th scope="col">Age</th>
+      <th scope="col">Note</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody class="table-dark">
+    <tr *ngFor="let player of players">
+      <!-- <th scope="row">1</th> -->
+      <td>{{player.name}}</td>
+      <td>{{player.number}}</td>
+      <td>{{player.poste}}</td>
+      <td>{{player.age}}</td>
+      <td>{{player.note}}</td>
+      <td><button type="button" (click)="goToDisplayPlayer(player._id)" class="btn btn-info"><i
+            class="fas fa-tv"></i></button>
+        <button type="button" (click)="goToEditPlayer(player._id)" class="btn btn-secondary ml-1 mr-1"><i
+            class="fas fa-edit"></i></button>
+        <button type="button" (click)="deletePlayer(player._id)" class="btn btn-danger"><i
+            class="fas fa-trash-alt"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="pb-0 pt-3 d-flex justify-content-center">
+  <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+</div>

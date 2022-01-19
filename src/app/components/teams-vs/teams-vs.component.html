@@ -1,0 +1,39 @@
+<div class="d-flex team-vs">
+  <span class="score"><span [ngClass]="{
+    win: score(match.scoreOne,match.scoreTwo)[0]=='win',
+    draw: score(match.scoreOne,match.scoreTwo)[0]=='draw',
+    loss: score(match.scoreOne,match.scoreTwo)[0]=='loss'
+  }">{{match.scoreOne}}</span>-<span [ngClass]="{
+    win: score(match.scoreTwo,match.scoreOne)[0]=='win',
+    draw: score(match.scoreTwo,match.scoreOne)[0]=='draw',
+    loss: score(match.scoreTwo,match.scoreOne)[0]=='loss'
+  }">{{match.scoreTwo}}</span></span>
+  <div class="team-1 w-50">
+    <div class="team-details w-100 text-center">
+      <img src="assets/images/logo_1.png" alt="Image" class="img-fluid">
+      <h3>{{match.teamOne}} <span [ngStyle]="{
+        color: score(match.scoreOne,match.scoreTwo)[1]
+      }">({{score(match.scoreOne,match.scoreTwo)[2]}})</span></h3>
+      <ul class="list-unstyled">
+        <li>Anja Landry (7)</li>
+        <li>Eadie Salinas (12)</li>
+        <li>Ashton Allen (10)</li>
+        <li>Baxter Metcalfe (5)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="team-2 w-50">
+    <div class="team-details w-100 text-center">
+      <img src="assets/images/logo_2.png" alt="Image" class="img-fluid">
+      <h3>{{match.teamTwo}} <span [ngStyle]="{
+        color: score(match.scoreTwo,match.scoreOne)[1]
+      }">({{score(match.scoreTwo,match.scoreOne)[2]}})</span></h3>
+      <ul class="list-unstyled">
+        <li>Macauly Green (3)</li>
+        <li>Arham Stark (8)</li>
+        <li>Stephan Murillo (9)</li>
+        <li>Ned Ritter (5)</li>
+      </ul>
+    </div>
+  </div>
+</div>

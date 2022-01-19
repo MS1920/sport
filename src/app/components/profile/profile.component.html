@@ -1,0 +1,27 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<form #profileForm="ngForm">
+    <legend></legend>
+    <div class="form-group">
+        <label for="exampleInputEmail1">First Name</label>
+        <input type="email" class="form-control" readonly [(ngModel)]="user.firstName" [ngModelOptions]="{standalone: true}"
+            id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Last Name</label>
+        <input type="email" class="form-control" readonly [(ngModel)]="user.lastName" [ngModelOptions]="{standalone: true}"
+            id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" readonly [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"
+            id="exampleInputEmail1" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" readonly [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
+            id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Edit Profile</button>
+    <span style="color: red;">{{error}}</span>
+</form>

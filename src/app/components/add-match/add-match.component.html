@@ -1,0 +1,33 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<div class="container">
+  <form #addMatchForm="ngForm" (ngSubmit)="addMatch()">
+    <div class="form">
+      <div class="form-group w-25">
+        <label for="exampleInputEmail1">Team One</label>
+        <select class="form-select" name="" id="" [(ngModel)]="match.teamOne" [ngModelOptions]="{standalone: true}">
+          <option value="undefined" disabled>Select Team</option>
+          <option [value]="team.name" *ngFor="let team of teams"> {{team.name}} </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Score One</label>
+        <input type="number" class="form-control" [(ngModel)]="match.scoreOne" [ngModelOptions]="{standalone: true}"
+          id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <span style="margin: 3% 3% 0;font-size: 3rem;">VS</span>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Score Two</label>
+        <input type="number" class="form-control" [(ngModel)]="match.scoreTwo" [ngModelOptions]="{standalone: true}"
+          id="exampleInputPassword1">
+      </div>
+      <div class="form-group w-25">
+        <label for="exampleInputEmail1">Team Two</label>
+        <select class="form-select" name="" id="" [(ngModel)]="match.teamTwo" [ngModelOptions]="{standalone: true}">
+          <option value="undefined" disabled> Select Team </option>
+          <option [value]="team.name" *ngFor="let team of teams"> {{team.name}} </option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Match</button>
+    </div>
+  </form>
+</div>

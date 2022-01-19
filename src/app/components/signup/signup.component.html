@@ -1,0 +1,61 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <form [formGroup]="addSignUpForm">
+          <div class="form-group">
+            <label *ngIf="userId">First Name</label>
+            <input type="text" class="form-control" [(ngModel)]="user.firstName" formControlName="firstName" [readonly]="displayPage" placeholder="First Name" required>
+            <div *ngIf="addSignUpForm.controls['firstName'].invalid && (addSignUpForm.controls['firstName'].dirty || addSignUpForm.controls['firstName'].touched)">
+              <div *ngIf="addSignUpForm.controls['firstName'].errors.required" style="color: red;">Please enter your First Name</div>
+              <div *ngIf="addSignUpForm.controls['firstName'].errors.minlength" style="color: red;">Your First Name must have at least 3 chars</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label *ngIf="userId">Last Name</label>
+            <input type="text" class="form-control" [(ngModel)]="user.lastName" formControlName="lastName" [readonly]="displayPage" placeholder=" Last Name">
+            <div *ngIf="addSignUpForm.controls['lastName'].invalid && (addSignUpForm.controls['lastName'].dirty || addSignUpForm.controls['lastName'].touched)">
+              <div *ngIf="addSignUpForm.controls['lastName'].errors.required" style="color: red;">Please enter your Last Name</div>
+              <div *ngIf="addSignUpForm.controls['lastName'].errors.minlength" style="color: red;">Your Last Name must have at least 3 chars</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label *ngIf="userId">E-mail</label>
+            <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email" [readonly]="displayPage" placeholder="Email">
+            <div *ngIf="addSignUpForm.controls['email'].invalid && (addSignUpForm.controls['email'].dirty || addSignUpForm.controls['email'].touched)">
+              <div *ngIf="addSignUpForm.controls['email'].errors.required" style="color: red;">Please enter your E-mail</div>
+              <div *ngIf="addSignUpForm.controls['email'].errors.email" style="color: red;">E-mail invalid</div>
+            </div>
+            <span style="color: red;">{{emailExistMsg}}</span>
+          </div>
+          <div class="form-group">
+            <label *ngIf="userId">Phone</label>
+            <input type="tel" class="form-control" [(ngModel)]="user.phone" formControlName="phone" [readonly]="displayPage"   placeholder="Phone">
+            <div *ngIf="addSignUpForm.controls['phone'].invalid && (addSignUpForm.controls['phone'].dirty || addSignUpForm.controls['phone'].touched)">
+              <div *ngIf="addSignUpForm.controls['phone'].errors.required" style="color: red;">Please enter your Phone Number</div>
+              <div *ngIf="addSignUpForm.controls['phone'].errors.pattern" style="color: red;">Invalid Phone Number</div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="!displayPage">
+            <label *ngIf="userId">Password</label>
+            <input [type]="password" class="form-control" formControlName="password" placeholder="Password">
+            <div *ngIf="addSignUpForm.controls['password'].invalid && (addSignUpForm.controls['password'].dirty || addSignUpForm.controls['password'].touched)">
+              <div *ngIf="addSignUpForm.controls['password'].errors.required" style="color: red;">Please enter your Password</div>
+              <div *ngIf="addSignUpForm.controls['password'].errors.minlength || addSignUpForm.controls['password'].errors.maxlength" style="color: red;">Your Password must be between 7 and 17 chars</div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="!userId">
+            <input [type]="password" class="form-control" [(ngModel)]="user.confirmPassword" formControlName="confirmPassword" [readonly]="displayPage"  placeholder="Confirm Password">
+            <div *ngIf="addSignUpForm.controls['confirmPassword'].invalid && (addSignUpForm.controls['confirmPassword'].dirty || addSignUpForm.controls['confirmPassword'].touched)">
+              <div *ngIf="addSignUpForm.controls['confirmPassword'].errors.mustMatch" style="color: red;">Password & Confirm Password doesn't match</div>
+            </div>
+          </div>
+          <button *ngIf="!displayPage && !editPage" [disabled]="addSignUpForm.invalid && !userId" (click)="signUp()" class="btn btn-primary">{{bannerDetails.title}}</button>
+          <button *ngIf="!displayPage && editPage" [disabled]="addSignUpForm.invalid && !userId" (click)="editUser()" class="btn btn-primary">{{bannerDetails.title}}</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

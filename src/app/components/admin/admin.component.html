@@ -1,0 +1,34 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<div class="tab mx-auto">
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+        role="tab" aria-controls="nav-home" aria-selected="true">Players</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
+        role="tab" aria-controls="nav-profile" aria-selected="false">Matches</button>
+      <button class="nav-link" id="nav-teams-tab" data-bs-toggle="tab" data-bs-target="#nav-teams" type="button"
+        role="tab" aria-controls="nav-teams" aria-selected="false">Teams</button>
+        <button class="nav-link" id="nav-blogs-tab" data-bs-toggle="tab" data-bs-target="#nav-blogs" type="button"
+        role="tab" aria-controls="nav-blogs" aria-selected="false">Blogs</button>
+        <button class="nav-link" id="nav-users-tab" data-bs-toggle="tab" data-bs-target="#nav-users" type="button"
+        role="tab" aria-controls="nav-users" aria-selected="false">Users</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <app-admin-players></app-admin-players>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <app-admin-matches></app-admin-matches>
+    </div>
+    <div class="tab-pane fade" id="nav-teams" role="tabpanel" aria-labelledby="nav-teams-tab">
+      <app-admin-teams></app-admin-teams>
+    </div>
+    <div class="tab-pane fade" id="nav-blogs" role="tabpanel" aria-labelledby="nav-blogs-tab">
+      <app-admin-blogs></app-admin-blogs>
+    </div>
+    <div class="tab-pane fade" id="nav-users" role="tabpanel" aria-labelledby="nav-users-tab">
+      <app-admin-users></app-admin-users>
+    </div>
+  </div>
+</div>

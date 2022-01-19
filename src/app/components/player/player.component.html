@@ -1,0 +1,23 @@
+<div class="post-entry mb-3">
+    <a href="#">
+      <img [src]="playerDetails.avatar" alt="Image" style="height: 35rem;width: 30rem;" class="img-fluid">
+    </a>
+    <div class="caption">
+      <div class="caption-inner">
+        <h2 class="mb-3 ml-5" style="font-weight: bold;">{{playerDetails.name}}</h2>
+        <div class="author d-flex align-items-center">
+          <div class="img mb-2 mr-3">
+            <img src="assets/images/person_1.jpg" alt="">
+          </div>
+          <div class="text">
+            <h4>{{playerDetails.poste}}</h4>
+            <h5>{{playerDetails.age}} Years</h5>
+            <span style="font-weight: bold;">Number : {{playerDetails.number}}</span>
+            <p style="font-weight: bold;" [ngStyle]="{
+              color: note(playerDetails.note)
+            }">Note : {{playerDetails.note}}</p>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>

@@ -1,0 +1,12 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<form [formGroup]="searchMatchesFrom">
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="teamOne" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="What are you looking ?">
+    </div>
+    <button type="submit" (click)="searchMatches()" class="btn btn-primary">Search</button>
+</form>
+<div class="col-lg-12" style="margin: 11% 0;" *ngFor="let m of foundedMatches">
+    <app-teams-vs [match]="m"></app-teams-vs>
+</div>
+<div *ngIf="foundedMatches?.length == 0" class="notFound">There is no matches for {{this.searchMatchesFrom.value.teamOne}}</div>

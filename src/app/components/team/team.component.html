@@ -1,0 +1,20 @@
+<div class="widget-next-match" style="margin: 7% 0;">
+    <div class="widget-body mb-3">
+        <div class="widget-vs">
+            <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                <div class="team-1 text-center">
+                    <img [src]=teamDetails.logo alt="Image" style="margin-bottom: 9%;">
+                    <h3>{{teamDetails.name}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center widget-vs-contents mb-4">
+        <h4>{{teamDetails.foundation}}</h4>
+        <p class="mb-5">
+            <strong class="text-primary">{{teamDetails.country}}</strong><br>
+            {{teamDetails.stadium}}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<div class="container site-section">
+  <div class="row">
+    <div class="col-6 title-section">
+      <h2 class="heading">Our Blog</h2>
+    </div>
+    <div class="col-6 text-right">
+      <div class="custom-nav">
+      <a routerLink="/add-article" class="js-custom-prev-v2"><span class='material-icons'>+</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="custom-media d-flex">
+      <div class="img mr-4">
+        <img [src]="article.image" alt="Image" class="img-fluid">
+      </div>
+      <div class="text">
+        <span class="meta">{{article.date}}</span>
+        <h3 class="mb-4"><a href="#">{{article.title}}</a></h3>
+        <p>{{article.description}}</p>
+        <p><a href="#">Read more</a></p>
+      </div>
+    </div>
+</div>

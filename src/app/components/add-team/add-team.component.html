@@ -1,0 +1,29 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<form #addTeamForm="ngForm" (ngSubmit)="addOrEditTeam()">
+    <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="team.name" [ngModelOptions]="{standalone: true}" id="exampleInputName" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputNumber">Foundation</label>
+        <input type="number" class="form-control" [(ngModel)]="team.foundation" [ngModelOptions]="{standalone: true}" id="exampleInputNumber" aria-describedby="emailHelp">
+      </div>
+    <div class="form-group">
+      <label for="exampleInputPost">Country</label>
+      <select class="form-select" [(ngModel)]="team.country" [ngModelOptions]="{standalone: true}">
+        <option value="undefined" disabled>Select country</option>
+        <option [value]="country" *ngFor="let country of countries"> {{country}} </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPost">Stadium</label>
+      <input type="text" class="form-control" [(ngModel)]="team.stadium" [ngModelOptions]="{standalone: true}" id="exampleInputPost" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group mt-4" style="text-align: center;">
+      <label style="cursor:pointer;" for="exampleInputAvatar"><i class="fas fa-images"></i> Logo<input type="file" style="display: none;" class="form-control" (change)='onImageSelected($event)' id="exampleInputAvatar"></label>
+    </div>
+    <div class="d-flex justify-content-center">
+      <img [src]="imagePreview" width="200px" height="250px" *ngIf="imagePreview">
+    </div>
+    <button type="submit" class="btn btn-primary">{{bannerDetails.title}}</button>
+</form>

@@ -1,0 +1,73 @@
+<div class="site-section bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="widget-next-match">
+            <div class="widget-title">
+              <h3>Next Match</h3>
+            </div>
+            <div class="widget-body mb-3">
+              <div class="widget-vs">
+                <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                  <div class="team-1 text-center">
+                    <img src="assets/images/logo_1.png" alt="Image">
+                    <h3>Football League</h3>
+                  </div>
+                  <div>
+                    <span class="vs"><span>VS</span></span>
+                  </div>
+                  <div class="team-2 text-center">
+                    <img src="assets/images/logo_2.png" alt="Image">
+                    <h3>Soccer</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center widget-vs-contents mb-4">
+              <h4>World Cup League</h4>
+              <p class="mb-5">
+                <span class="d-block">December 20th, 2020</span>
+                <span class="d-block">9:30 AM GMT+0</span>
+                <strong class="text-primary">New Euro Arena</strong>
+              </p>
+
+              <div id="date-countdown2" class="pb-1"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          
+          <div class="widget-next-match">
+            <table class="table custom-table">
+              <thead>
+                <tr>
+                  <th>P</th>
+                  <th>Team</th>
+                  <th>W</th>
+                  <th>D</th>
+                  <th>L</th>
+                  <th>PTS</th>
+                  <th>Q</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let r of ranking" [ngStyle]="{
+                  color: rankingDetails(r.position,r.points)[0]
+                }">
+                  <td>{{r.position}}</td>
+                  <td><strong>{{r.team}}</strong></td>
+                  <td>{{r.win}}</td>
+                  <td>{{r.draw}}</td>
+                  <td>{{r.loss}}</td>
+                  <td>{{r.points}}</td>
+                  <td>{{rankingDetails(r.position, r.points)[1]}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> <!-- .site-section -->

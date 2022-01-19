@@ -1,0 +1,20 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<div class="latest-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 title-section">
+              <h2 class="heading">Star Players / Informations</h2>
+            </div>
+            <div class="col-6 text-right">
+              <div class="custom-nav">
+              <a routerLink="/add-player" class="js-custom-prev-v2"><span class='material-icons'>+</span></a>
+              </div>
+            </div>
+          </div>
+        <div class="row no-gutters">
+            <div class="col-md-5 mx-auto">
+                <app-player [playerDetails]="player"></app-player>
+            </div>
+        </div>
+    </div>
+</div>

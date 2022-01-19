@@ -1,0 +1,20 @@
+<app-banner [bannerDetails]="bannerDetails"></app-banner>
+<form [formGroup]="weatherForm">
+    <div class="form-group">
+        <label>City</label>
+        <input type="text" class="form-control" formControlName="city" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="What are you looking ?">
+        <div
+            *ngIf="weatherForm.controls['city'].invalid && (weatherForm.controls['city'].dirty || weatherForm.controls['city'].touched)">
+            <div *ngIf="weatherForm.controls['city'].errors.required" style="color: red;">Please enter the city name
+            </div>
+        </div>
+    </div>
+    <button type="submit" (click)="weather()" class="btn btn-primary">Display Weather</button>
+</form>
+<div *ngIf="errorMsg && !weatherObj" style="text-align: center; margin-bottom: 7%; font-size: 27px; color: red;"> {{errorMsg}} </div>
+<div *ngIf="weatherObj && !errorMsg" style="margin: 0 0 7% 35%; font-size: 20px;">
+    <div><span style="color: red;">Temperature: </span><span style="color: white;">{{weatherObj.temp}}</span></div>
+    <div><span style="color: red;">Humidity: </span><span style="color: white;">{{weatherObj.humidity}}</span></div>
+    <div><span style="color: red;">Wind: </span><span style="color: white;">{{weatherObj.wind}}</span></div>
+</div>
